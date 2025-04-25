@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Security.Cryptography.X509Certificates;
+
+class Program{
+    static void Main(){
+        var game = new Game();
+        game.GameLoop();
+    }
+}

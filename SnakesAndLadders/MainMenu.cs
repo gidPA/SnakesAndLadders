@@ -11,5 +11,9 @@ static class MainMenu{
 
     static void NewGame(){
         Console.WriteLine("Please select a board: ");
+
+        for(int i = 0; i < 3; i++){
+            Console.WriteLine("Map " + i);
+        }
     }
 }
