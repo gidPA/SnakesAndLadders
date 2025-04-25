@@ -24,12 +24,12 @@ class Game{
     private static List<Tile> TileList = new List<Tile>(){
         new Tile(),
         new Tile(),
+        new Tile(new TileEffect{EffectName = "Ladder", NewPosition = 8}),
         new Tile(),
         new Tile(),
         new Tile(),
         new Tile(),
-        new Tile(),
-        new Tile(),
+        new Tile(new TileEffect{EffectName = "Snake", NewPosition = 1}),
         new Tile(),
         new Tile(),
         new Tile(),
@@ -45,9 +45,15 @@ class Game{
                 Console.Write("Press enter to roll dice: ");
                 ConsoleKeyInfo key = Console.ReadKey(intercept: true);
                 int diceSteps = Dice.GetSteps();
+                Console.WriteLine("\nDice Roll: Player {0} got {1}", i, diceSteps);
                 Players[i] = GameBoard.ApplyMove(Players[i], diceSteps);
+
                 IsGameOver = GameBoard.IsWinningPosition(Players[i].Position);
-                if (IsGameOver) break;
+                
+                if (IsGameOver){
+                    Console.WriteLine("VICTORY! Player {0} wins!", i);
+                    break;
+                }
             }
         }
 

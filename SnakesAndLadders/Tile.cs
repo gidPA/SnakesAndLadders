@@ -1,5 +1,6 @@
 public class TileEffect
 {
+    public string? EffectName = "";
     public int? NewPosition { get; set; } // null = no change
     public bool SkipNextTurn { get; set; } = false;
     public bool ExtraTurn { get; set; } = false;

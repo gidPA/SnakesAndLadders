@@ -22,8 +22,6 @@ class Board
             tentative = player.Position + steps;
         }
 
-
-        Console.WriteLine("Tentative value: {0}", tentative);
         if (tentative > finalTile)
         {
             // Bounce back
@@ -44,6 +42,8 @@ class Board
         if (effect is null){
             player.Position = tentative;
             return player;
+        } else {
+            Console.WriteLine("\nPlayer stepped on trap tile: {0}", effect.EffectName);
         }
         if (effect.NewPosition is int newPosition){
             player.Position = newPosition;
