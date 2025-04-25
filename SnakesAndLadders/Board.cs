@@ -27,6 +27,7 @@ class Board
             // Bounce back
             int overflow = tentative - finalTile;
             tentative = finalTile - overflow;
+            Console.WriteLine("Bounced back!");
         }
 
         if (tentative < 0)
@@ -43,7 +44,7 @@ class Board
             player.Position = tentative;
             return player;
         } else {
-            Console.WriteLine("\nPlayer stepped on trap tile: {0}", effect.EffectName);
+            Console.WriteLine("Player stepped on trap tile: {0}", effect.EffectName);
         }
         if (effect.NewPosition is int newPosition){
             player.Position = newPosition;
@@ -63,7 +64,5 @@ class Board
 }
 
 static class BoardFactory{
-    // public static List<ITile> LoadFromFile(){
 
-    // }
 }

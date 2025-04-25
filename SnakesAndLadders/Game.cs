@@ -47,6 +47,7 @@ class Game{
                 int diceSteps = Dice.GetSteps();
                 Console.WriteLine("\nDice Roll: Player {0} got {1}", i, diceSteps);
                 Players[i] = GameBoard.ApplyMove(Players[i], diceSteps);
+                Console.WriteLine("Player {0} now steps on tile {1}", i, Players[i].Position);
 
                 IsGameOver = GameBoard.IsWinningPosition(Players[i].Position);
                 
@@ -56,8 +57,6 @@ class Game{
                 }
             }
         }
-
-
     }
 
 }
