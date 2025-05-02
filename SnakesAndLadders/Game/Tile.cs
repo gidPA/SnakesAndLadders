@@ -33,7 +33,7 @@ public class TeleportTile : Tile {
 
     public override Player ApplyEffect(Player player) {
         if(teleportType == TeleportType.Ladder){
-            Console.WriteLine($"{player.FullName} has got lucky to step in a Ladder Tile! Now {player.FullName} occupies tile {Destination}");
+            Console.WriteLine($"Fantastic! {player.FullName} stepped on a ladder Tile! Now {player.FullName} occupies tile {Destination}");
         } else {
             Console.WriteLine($"Oh no! {player.FullName} stepped on a Snake tile! Now {player.FullName} occupies tile {Destination}");
         }
